@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
+
+    <view entity="checkdcconcept_A" name="a-view" extends="_local">
+        <property name="bs" view="_minimal">
+            <property name="b" view="_minimal"/>
+        </property>
+    </view>
+</views>

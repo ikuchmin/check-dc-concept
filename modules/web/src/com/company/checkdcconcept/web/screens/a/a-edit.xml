@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://editorCaption"
+        focusComponent="form"
+        messagesPack="com.company.checkdcconcept.web.screens.a">
+    <data>
+        <instance id="aDc"
+                  class="com.company.checkdcconcept.entity.A"
+                  view="a-view">
+            <loader/>
+
+            <collection id="bsDc" property="bs" />
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="aDc">
+            <column width="250px">
+                <textField id="nameField" property="name"/>
+            </column>
+        </form>
+        <table id="bsTable" height="500px" width="300px" dataContainer="bsDc">
+            <actions>
+                <action id="add" type="add"/>
+                <action id="exclude" type="exclude"/>
+            </actions>
+            <columns>
+                <column id="b.name"/>
+            </columns>
+            <buttonsPanel id="bsButtonPanel">
+                <button id="addBtn" action="bsTable.add"/>
+                <button id="excludeBtn" action="bsTable.exclude"/>
+            </buttonsPanel>
+        </table>
+        <hbox id="editActions" spacing="true">
+            <button action="windowCommitAndClose"/>
+            <button action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
